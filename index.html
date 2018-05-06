@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <script type="text/javascript" src="javascript/scripts.js"></script>
     <title>Jokenpo</title>
   </head>
   <body>
@@ -10,14 +11,13 @@
       <div class="tittle">JOKENPO</div>
       <div class="sub">Choose your weapon</div>
       <div class="weapons">
-        <div class="option">ROCK</div>
-        <div class="option">SCISSORS</div>
-        <div class="option">PAPER</div>
+        <div class="option" onclick="playRound(1)">ROCK</div>
+        <div class="option" onclick="playRound(2)">SCISSORS</div>
+        <div class="option" onclick="playRound(3)">PAPER</div>
       </div>
-      <div class="match">You win! Rock beats scissors!</div>
-      <div class="score">
-        Player 1 Vs 0 Computer
-      </div>
+      <div class="match" id="result"></div>
+      <div class="score" id="bottom"></div>
+      <div class="reset" onclick="reset()">RESET SCORE</div>
     </div>
   </body>
 </html>

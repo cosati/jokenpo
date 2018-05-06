@@ -1,10 +1,10 @@
 let playerPoints = 0;
 let computerPoints = 0;
 
-function game() {
-  while (1) {
-
-  }
+function reset() {
+  playerPoints = 0;
+  computerPoints = 0;
+  document.getElementById("bottom").innerHTML = "Player " + playerPoints + " Vs " + computerPoints + " Computer";
 }
 
 function computerPlay() {
@@ -14,52 +14,63 @@ function computerPlay() {
   return n;
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
+  let computerSelection = computerPlay();
   switch (playerSelection) {
     case 1:
-      switch (computerPlay) {
+      switch (computerSelection) {
         case 1:
           console.log("It's Draw");
-          return "It's Draw!";
+          document.getElementById("result").innerHTML = "It's Draw!";
+          break;
         case 2:
           console.log("Win");
           playerPoints++;
-          return "You win! Rock beats scissors!"
+          document.getElementById("result").innerHTML = "You win! Rock beats scissors!";
+          break;
         case 3:
           console.log("Lose");
           computerPoints++;
-          return "You lose! Paper beats rock!"
+          document.getElementById("result").innerHTML = "You lose! Paper beats rock!";
+          break;
       }
       break;
     case 2:
-      switch (computerPlay) {
+      switch (computerSelection) {
         case 1:
           console.log("Lose");
           computerPoints++;
-          return "You lose! rock beats scissors!"
+          document.getElementById("result").innerHTML = "You lose! rock beats scissors!";
+          break;
         case 2:
           console.log("Draw");
-          return "It's Draw!";
+          document.getElementById("result").innerHTML = "It's Draw!";
+          break;
         case 3:
           console.log("Win");
           playerPoints++;
-          return "You win! Scissors beats paper!";
+          document.getElementById("result").innerHTML = "You win! Scissors beats paper!";
+          break;
       }
       break;
     case 3: //Paper
-      switch (computerPlay) {
+      switch (computerSelection) {
         case 1: //Rock
           console.log("Win");
           playerPoints++;
-          return "You win! Paper beats rock!";
+          document.getElementById("result").innerHTML = "You win! Paper beats rock!";
+          break;
         case 2:
           console.log("Lose");
           computerPoints++;
-          return "You lose! Scissors beats paper!";
+          document.getElementById("result").innerHTML = "You lose! Scissors beats paper!";
+          break;
         case 3:
           console.log("Draw");
-          return "It's Draw!";
+          document.getElementById("result").innerHTML = "It's Draw!";
+          break;
       }
       break;
   }
+  document.getElementById("bottom").innerHTML = "Player " + playerPoints + " Vs " + computerPoints + " Computer";
 }
